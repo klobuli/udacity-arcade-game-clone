@@ -1,0 +1,167 @@
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	text-align: center;
+}
+
+.selection-container {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	background: rgb(255, 255, 255);
+}
+
+.main-heading {
+	font: 400 65px/normal 'Pacifico', cursive;
+	color: rgb(35, 35, 35);
+}
+
+.selection-heading {
+	margin: 0;
+	padding: 50px 0 0;
+	font: 400 40px/normal 'Staatliches', cursive;
+	color: rgb(35, 35, 35);
+}
+
+.players-box {
+	width: 600px;
+	height: 200px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: rgb(255, 255, 255);
+}
+
+.player-pic {
+	cursor: pointer;
+	transition: 300ms ease;
+}
+
+.player-pic:hover {
+	transform: scale(1.1);
+}
+
+@keyframes chosen {
+	from {background: rgba(255, 255 ,255 ,1);}
+	to {background: rgba(255, 255 ,255 ,0);}
+}
+
+.player-chosen-animation {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	animation-name: chosen;
+	animation-duration: 1s;
+}
+
+canvas {
+	margin-top: 80px;
+}
+
+.player-wins, .player-fails {
+	width: 505px;
+	position: absolute;
+	left: 50%;
+	top: 50px;
+	transform: translateX(-50%);
+	font: 400 40px/normal 'Staatliches', cursive;
+	text-align: center;
+}
+
+@keyframes win {
+	from { top: -100px; color: rgba(0, 0, 0, 0); }
+	to { top: 50px; color: rgba(35, 35, 35, 1); }
+}
+
+.player-wins {
+	color: rgba(35, 35, 35, 1);
+	animation-name: win;
+	animation-duration: 400ms;
+}
+
+@keyframes fail {
+	from { top: -100px; color: rgba(0, 0, 0, 0); }
+	to { top: 50px; color: rgba(193, 15, 42, 1); }
+}
+
+.player-fails {
+	color: rgba(193, 15, 42, 1);
+	animation-name: fail;
+	animation-duration: 400ms;
+}
+
+.stats-container {
+	width: 505px;
+	margin: 8px auto;
+}
+
+@keyframes stats {
+	from { opacity: 0; }
+	to { opacity: 1; }
+}
+
+.collide {
+	animation-name: stats;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+}
+
+h3 {
+	width: 505px;
+	margin: 0 0 16px;
+	font: 400 32px/normal 'Staatliches', cursive;
+	text-transform: uppercase;
+	color: rgb(50, 50, 50);
+	box-shadow: inset 0 -8px rgb(237, 244, 232);
+}
+
+.player-stats-reached-water, .player-stats-timer, .player-stats-rating {
+	width: 505px;
+	margin: 0 auto;
+	color: rgb(80, 80, 80);
+	font: 400 20px/155% 'Exo 2', sans-serif;
+	text-align: left;
+}
+
+.reload {
+	width: 120px;
+	height: 120px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	position: fixed;
+	top: 50px;
+	right: 0;
+	background-color: rgb(240, 240, 240);
+	color: rgb(150, 150, 150);
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	cursor: pointer;
+	transition: 350ms ease;
+}
+
+.reload:hover {
+	color: rgb(35, 35, 35);
+}
+
+.fa-redo-alt {
+	display: block;
+	margin-top: 8px;
+	font-size: 35px;
+}
+
+.reload-text {
+	display: block;
+	font: 400 18px/normal 'Staatliches', cursive;
+}
